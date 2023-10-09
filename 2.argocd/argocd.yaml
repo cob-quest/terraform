@@ -6,87 +6,87 @@ server:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
 
   extensions:
     resources:
       limits:
-      cpu:                100m
-      ephemeral-storage:  0.25Gi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  0.25Gi
-      memory:             128Mi
+        cpu:                100m
+        ephemeral-storage:  128Mi
+        memory:             128Mi
+      requests:
+        cpu:                100m
+        ephemeral-storage:  128Mi
+        memory:             128Mi
 
 redis:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
   exporter:
     resources:
       limits:
-      cpu:                100m
-      ephemeral-storage:  0.25Gi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  0.25Gi
-      memory:             128Mi
+        cpu:                100m
+        ephemeral-storage:  128Mi
+        memory:             128Mi
+      requests:
+        cpu:                100m
+        ephemeral-storage:  128Mi
+        memory:             128Mi
 
 applicationSet:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
 
 repoServer:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  256Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  256Mi
       memory:             128Mi
   
 controller:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
 
 notifications:
   resources:
     limits:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
     requests:
       cpu:                100m
-      ephemeral-storage:  0.25Gi
+      ephemeral-storage:  128Mi
       memory:             128Mi
 dex:
   enabled: false
