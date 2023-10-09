@@ -1,8 +1,93 @@
 server:
   ingress:
     enabled: true
-  service:
-    type: NodePort
+  extraArgs:
+    - --insecure
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
 
+  extensions:
+    resources:
+      limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+
+redis:
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+  exporter:
+    resources:
+      limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+
+applicationSet:
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+
+repoServer:
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+  
+controller:
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+
+notifications:
+  resources:
+    limits:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
+    requests:
+      cpu:                100m
+      ephemeral-storage:  0.25Gi
+      memory:             128Mi
 dex:
   enabled: false
+
