@@ -1,0 +1,32 @@
+stages:
+  - affected
+
+gke:
+  stage: affected
+  trigger:
+    include: ci-template/gitlab-terraform-ci.yaml
+    strategy: depend
+  variables:
+    TF_STATE_NAME: default
+    TF_CACHE_KEY: default
+    TF_ROOT: 1.gke
+  allow_failure: true
+  rules:
+    - changes:
+        - 1.gke/*
+    - when: never
+
+apigw:
+  stage: affected
+  trigger:
+    include: ci-template/gitlab-terraform-ci.yaml
+    strategy: depend
+  variables:
+    TF_STATE_NAME: default
+    TF_CACHE_KEY: default
+    TF_ROOT: 3.apigw
+  allow_failure: true
+  rules:
+    - changes:
+        - 3.apigw/*
+    - when: never
