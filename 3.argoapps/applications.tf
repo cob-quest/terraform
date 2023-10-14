@@ -39,9 +39,11 @@ resource "argocd_application" "reflector" {
 }
 
 
-resource "argocd_application" "rabbitmq" {
+# Deploy all platform apps
+resource "argocd_application" "platform-apps" {
+  for_each = argocd_repository.private
   metadata {
-    name      = "rabbitmq"
+    name      = each.value.name
     namespace = "argocd"
   }
 
@@ -52,7 +54,7 @@ resource "argocd_application" "rabbitmq" {
     }
 
     source {
-      repo_url = argocd_repository.private["rabbitmq"].repo
+      repo_url = each.value.repo
       path     = "helm"
     }
 
@@ -62,7 +64,7 @@ resource "argocd_application" "rabbitmq" {
         prune     = true
         self_heal = true
       }
-      sync_options = [ "CreateNamespace=true" ]
+      sync_options = ["CreateNamespace=true"]
 
       retry {
         limit = "5"
@@ -72,7 +74,6 @@ resource "argocd_application" "rabbitmq" {
           factor       = "2"
         }
       }
-
     }
   }
 }
