@@ -1,8 +1,6 @@
 server:
   ingress:
     enabled: true
-  extraArgs:
-    - --insecure
   resources:
     limits:
       cpu:                100m
@@ -90,4 +88,3 @@ notifications:
       memory:             128Mi
 dex:
   enabled: false
-
