@@ -20,5 +20,6 @@ provider "argocd" {
   ## these need to be changed according to what argocd generated for you
   server_addr = "127.0.0.1:8080"
   username    = "admin"
-  password    = "n5KMG-wpDnyMACU5"
+  password    = "ATC4X3N0yPfJNtja"
+  insecure = true
 }
