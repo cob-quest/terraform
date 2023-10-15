@@ -8,3 +8,6 @@ repo_list = [
   { "name" : "traefik", "repo" : "git@gitlab.com:cs302-2023/g3-team8/project/k8s/traefik-charts.git" },
   { "name" : "trigger-api", "repo" : "git@gitlab.com:cs302-2023/g3-team8/project/k8s/trigger-api.git" }
 ]
+registry_server = "registry.gitlab.com"
+
+

@@ -76,5 +76,6 @@ resource "argocd_application" "platform-apps" {
       }
     }
   }
+  depends_on = [kubernetes_secret.docker-registry-credentials, kubernetes_secret.env-secret]
 }
 

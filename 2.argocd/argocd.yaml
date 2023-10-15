@@ -68,13 +68,13 @@ repoServer:
 controller:
   resources:
     limits:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
+      cpu:                200m
+      ephemeral-storage:  256Mi
+      memory:             256Mi
     requests:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
+      cpu:                200m
+      ephemeral-storage:  256Mi
+      memory:             256Mi
 
 notifications:
   resources:

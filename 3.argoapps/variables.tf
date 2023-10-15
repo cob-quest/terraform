@@ -29,5 +29,11 @@ variable "gcp_region" {
 
 variable "repo_list" {
   type = list(any)
-
 }
+
+variable "registry_server" {
+  
+}
+
+
+

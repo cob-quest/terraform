@@ -20,6 +20,12 @@ provider "argocd" {
   ## these need to be changed according to what argocd generated for you
   server_addr = "127.0.0.1:8080"
   username    = "admin"
-  password    = "ATC4X3N0yPfJNtja"
+  password    = "JISlUh4w92W78i3l"
   insecure = true
+}
+
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+  ## To be changed if using cloud
+  config_context = "minikube"
 }
