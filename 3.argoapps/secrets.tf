@@ -21,7 +21,7 @@ resource "kubernetes_secret" "docker-registry-credentials" {
 
 resource "kubernetes_secret" "env-secret" {
   metadata {
-    name = "env-secret"
+    name = "cob-secrets"
     annotations = {
       "reflector.v1.k8s.emberstack.com/reflection-allowed"      = true
       "reflector.v1.k8s.emberstack.com/reflection-auto-enabled" = true
@@ -32,6 +32,7 @@ resource "kubernetes_secret" "env-secret" {
 
   data = {
     ".env" = file(".env")
+    "challenge-bucket-key.json" = file("challenge-bucket-key.json")
   }
   depends_on = [ argocd_application.reflector ]
 }
