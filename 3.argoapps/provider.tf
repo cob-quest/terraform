@@ -1,10 +1,10 @@
 ## Comment out to deploy to cloud
 
-# provider "google" {
-#   credentials = file("~/.gcp/access.json")
-#   project     = var.gcp_project_id
-#   region      = var.gcp_region
-# }
+provider "google" {
+  credentials = file("~/.gcp/access.json")
+  project     = var.gcp_project_id
+  region      = var.gcp_region
+}
 
 terraform {
   required_providers {
@@ -18,14 +18,15 @@ terraform {
 
 provider "argocd" {
   ## these need to be changed according to what argocd generated for you
-  server_addr = "127.0.0.1:8080"
+  server_addr = "34.72.66.62"
   username    = "admin"
-  password    = "0f4SFWCqFQfEB58s"
+  password    = "cobbers123"
   insecure = true
 }
 
 provider "kubernetes" {
   config_path    = "~/.kube/config"
   ## To be changed if using cloud
-  config_context = "minikube"
+  config_context = "gke_cs302-devops_us-central1_cob-cluster"
+  # config_context = "minikube"
 }

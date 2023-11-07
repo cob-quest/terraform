@@ -1,90 +1,98 @@
-server:
-  ingress:
-    enabled: true
-  resources:
-    limits:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
+# server:
+#   ingress:
+#     enabled: true
+#   resources:
+#     limits:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
+#     requests:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
 
-  extensions:
-    resources:
-      limits:
-        cpu:                100m
-        ephemeral-storage:  128Mi
-        memory:             128Mi
-      requests:
-        cpu:                100m
-        ephemeral-storage:  128Mi
-        memory:             128Mi
+#   extensions:
+#     resources:
+#       limits:
+#         cpu:                1
+#         ephemeral-storage:  1Gi
+#         memory:             1Gi
+#       requests:
+#         cpu:                1
+#         ephemeral-storage:  1Gi
+#         memory:             1Gi
 
-redis:
-  resources:
-    limits:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
-  exporter:
-    resources:
-      limits:
-        cpu:                100m
-        ephemeral-storage:  128Mi
-        memory:             128Mi
-      requests:
-        cpu:                100m
-        ephemeral-storage:  128Mi
-        memory:             128Mi
+# redis:
+#   resources:
+#     limits:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
+#     requests:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
+#   exporter:
+#     resources:
+#       limits:
+#         cpu:                1
+#         ephemeral-storage:  1Gi
+#         memory:             1Gi
+#       requests:
+#         cpu:                1
+#         ephemeral-storage:  1Gi
+#         memory:             1Gi
 
-applicationSet:
-  resources:
-    limits:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
+# applicationSet:
+#   resources:
+#     limits:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
+#     requests:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
 
-repoServer:
-  resources:
-    limits:
-      cpu:                100m
-      ephemeral-storage:  256Mi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  256Mi
-      memory:             128Mi
+# repoServer:
+#   resources:
+#     limits:
+#       cpu:                1
+#       ephemeral-storage:  256Mi
+#       memory:             1Gi
+#     requests:
+#       cpu:                1
+#       ephemeral-storage:  256Mi
+#       memory:             1Gi
   
-controller:
-  resources:
-    limits:
-      cpu:                200m
-      ephemeral-storage:  256Mi
-      memory:             256Mi
-    requests:
-      cpu:                200m
-      ephemeral-storage:  256Mi
-      memory:             256Mi
+# controller:
+#   resources:
+#     limits:
+#       cpu:                200m
+#       ephemeral-storage:  256Mi
+#       memory:             256Mi
+#     requests:
+#       cpu:                200m
+#       ephemeral-storage:  256Mi
+#       memory:             256Mi
 
-notifications:
-  resources:
-    limits:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
-    requests:
-      cpu:                100m
-      ephemeral-storage:  128Mi
-      memory:             128Mi
+# notifications:
+#   resources:
+#     limits:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
+#     requests:
+#       cpu:                1
+#       ephemeral-storage:  1Gi
+#       memory:             1Gi
 dex:
   enabled: false
+
+configs:
+  cm:
+    timeout.reconciliation: 30s
+
+server:
+  service:
+    type: LoadBalancer
