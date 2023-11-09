@@ -1,0 +1,8 @@
+{
+    "auths": {
+        "registry.gitlab.com": {
+            "username":"gitlab_bot_username",
+            "password":"gitlab_bot_password"
+        }
+    }
+}

@@ -12,9 +12,11 @@
 
 .gcp
 
-*.key
+argocd.key
 .*
 
 challenge-bucket-key.json
 
 notes.txt
+tls.crt
+tls.key
