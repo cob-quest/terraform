@@ -15,7 +15,7 @@ resource "kubernetes_secret" "docker-registry-credentials" {
 
   type = "kubernetes.io/dockerconfigjson"
 
-  depends_on = [ argocd_application.reflector ]
+  depends_on = [argocd_application.reflector]
 }
 
 
@@ -31,10 +31,10 @@ resource "kubernetes_secret" "env-secret" {
   type = "Opaque"
 
   data = {
-    ".env" = file(".env")
+    ".env"                      = file(".env")
     "challenge-bucket-key.json" = file("challenge-bucket-key.json")
   }
-  depends_on = [ argocd_application.reflector ]
+  depends_on = [argocd_application.reflector]
 }
 
 resource "kubernetes_secret" "tls-cert" {
@@ -49,9 +49,9 @@ resource "kubernetes_secret" "tls-cert" {
   type = "kubernetes.io/tls"
 
   data = {
-    "tls.crt" = file("tls.crt")
-    "tls.key" = file("tls.key")
+    "tls.crt" = filebase64("tls.crt")
+    "tls.key" = filebase64("tls.key")
   }
-  depends_on = [ argocd_application.reflector ]
+  depends_on = [argocd_application.reflector]
 }
 
